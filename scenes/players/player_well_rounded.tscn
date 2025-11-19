@@ -39,4 +39,4 @@ collision_mask = 4
 position = Vector2(1, -30)
 shape = SubResource("CircleShape2D_8jcil")
 
-[node name="health_component" parent="." index="6" instance=ExtResource("5_8jcil")]
+[node name="health_component2" parent="." index="6" instance=ExtResource("5_8jcil")]

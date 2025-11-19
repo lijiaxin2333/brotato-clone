@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsq3egtyqxf6y"]
+[gd_scene load_steps=11 format=3 uid="uid://dsq3egtyqxf6y"]
 
 [ext_resource type="Script" uid="uid://c0nxgdmbqwfs8" path="res://scenes/unit.gd" id="1_1jvru"]
 [ext_resource type="Texture2D" uid="uid://devt2xbk78rej" path="res://assets/sprites/shadow.png" id="1_k673f"]
 [ext_resource type="PackedScene" uid="uid://cfhb3r15aguqf" path="res://scenes/components/hurtbox_component.tscn" id="3_1jvru"]
 [ext_resource type="PackedScene" uid="uid://5yofhly83t23" path="res://scenes/components/health_component.tscn" id="4_gic7v"]
+[ext_resource type="PackedScene" uid="uid://d3ycgaremri13" path="res://scenes/ui/health_bar.tscn" id="5_tb304"]
 
 [sub_resource type="Animation" id="Animation_tb304"]
 length = 0.001
@@ -242,3 +243,10 @@ unique_name_in_owner = true
 
 [node name="health_component" parent="." instance=ExtResource("4_gic7v")]
 unique_name_in_owner = true
+
+[node name="HealthBar" parent="." instance=ExtResource("5_tb304")]
+unique_name_in_owner = true
+offset_left = -47.0
+offset_top = -97.0
+offset_right = 51.0
+offset_bottom = -69.0

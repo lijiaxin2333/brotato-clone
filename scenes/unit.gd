@@ -9,6 +9,7 @@ var sprite: Sprite2D
 var collision: CollisionShape2D
 var health_component: HealthComponent
 var hurtbox_component: HurtboxComponent
+var health_bar: HealthBar
 
 @export var status: UnitStatus
 
@@ -19,6 +20,8 @@ func _ready() -> void:
 	collision = get_node("%collision") as CollisionShape2D
 	health_component = get_node("%health_component") as HealthComponent
 	health_component.setup(status)
+	health_bar = get_node("%HealthBar") as HealthBar
+	health_component.connect("on_health_changed", health_bar.on_health_changed)
 	hurtbox_component = get_node("%hurtbox_component") as HurtboxComponent
 	hurtbox_component.connect("on_damaged", self.on_hurtbox_on_damaged)
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ycgaremri13"]
+
+[ext_resource type="Script" uid="uid://em02yvlp1cf8" path="res://scenes/ui/health_bar.gd" id="1_1vcc2"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1vcc2")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 27.0
+max_value = 1.0
+value = 0.5
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
