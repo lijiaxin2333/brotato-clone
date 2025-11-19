@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitStatus" load_steps=3 format=3 uid="uid://bx032qt72g652"]
+
+[ext_resource type="Texture2D" uid="uid://dq63ocnu3lset" path="res://assets/sprites/Players/Player_3}.png" id="1_yrarh"]
+[ext_resource type="Script" uid="uid://b65pprbeh7yib" path="res://resources/units/unit_status.gd" id="2_cbtu0"]
+
+[resource]
+script = ExtResource("2_cbtu0")
+name = "well_rounded"
+icon = ExtResource("1_yrarh")
+health = 100.0
+damage = 100.0
+metadata/_custom_type_script = "uid://b65pprbeh7yib"

@@ -1,5 +1,5 @@
 extends Unit
-class_name PlayerWellRounded
+class_name Player
 
 var move_dir: Vector2 = Vector2.ZERO
 var is_dashing = false
@@ -28,8 +28,7 @@ func _ready() -> void:
 	dash_timer.wait_time = dash_duration; dash_timer.one_shot = true
 	dash_cooldown_timer.wait_time = dash_cooldown_duration; dash_cooldown_timer.one_shot = true
 	dash_timer.connect("timeout", self.on_dash_timer_timeout)
-	
-	
+	sprite.texture = status.icon
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -40,7 +39,10 @@ func _process(delta: float) -> void:
 	if can_dash():
 		start_dash()
 	position += current_velocity * delta
+	position.x = clamp(position.x, -1000, +1000)
+	position.y = clamp(position.y, -500, +500)
 	update_animations()
+	update_rotation()
 	
 # 动画
 func update_animations() -> void:

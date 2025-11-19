@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitStatus" load_steps=3 format=3 uid="uid://df1gh122ydvp"]
+
+[ext_resource type="Texture2D" uid="uid://bf4ls8ho3cuqa" path="res://assets/sprites/Enemies/Enemy_2.png" id="1_6lobc"]
+[ext_resource type="Script" uid="uid://b65pprbeh7yib" path="res://resources/units/unit_status.gd" id="1_ln80v"]
+
+[resource]
+script = ExtResource("1_ln80v")
+type = 1
+icon = ExtResource("1_6lobc")
+speed = 110.0
+metadata/_custom_type_script = "uid://b65pprbeh7yib"

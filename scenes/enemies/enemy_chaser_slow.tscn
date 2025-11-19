@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dci25q4h28tg3"]
+
+[ext_resource type="PackedScene" uid="uid://dsq3egtyqxf6y" path="res://scenes/unit.tscn" id="1_5aloe"]
+[ext_resource type="Script" uid="uid://bgjr22rs4iesf" path="res://scenes/enemies/enemy.gd" id="2_5woc2"]
+[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://assets/sprites/Enemies/Enemy_1.png" id="2_r21k7"]
+[ext_resource type="Resource" uid="uid://dx2qtronjxw8q" path="res://resources/units/enemies/status_enemy_chaser_slow.tres" id="3_hwvhg"]
+[ext_resource type="PackedScene" uid="uid://ny1h0nekc8v2" path="res://scenes/components/hitbox_component.tscn" id="5_g3mv3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwvhg"]
+radius = 10.049875
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5woc2"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rqbnj"]
+radius = 41.0
+
+[node name="enemy_chaser_slow" instance=ExtResource("1_5aloe")]
+collision_layer = 2
+script = ExtResource("2_5woc2")
+flock_push = 20.0
+status = ExtResource("3_hwvhg")
+
+[node name="sprite" parent="visuals" index="1"]
+texture = ExtResource("2_r21k7")
+
+[node name="collision" parent="." index="1"]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_hwvhg")
+
+[node name="vision_area" type="Area2D" parent="." index="3"]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vision_area" index="0"]
+shape = SubResource("CircleShape2D_5woc2")
+
+[node name="hitbox_component" parent="." index="5" instance=ExtResource("5_g3mv3")]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_component" index="0"]
+position = Vector2(-1, -30)
+shape = SubResource("CircleShape2D_rqbnj")

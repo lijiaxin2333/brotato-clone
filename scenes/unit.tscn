@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsq3egtyqxf6y"]
+[gd_scene load_steps=9 format=3 uid="uid://dsq3egtyqxf6y"]
 
 [ext_resource type="Script" uid="uid://c0nxgdmbqwfs8" path="res://scenes/unit.gd" id="1_1jvru"]
 [ext_resource type="Texture2D" uid="uid://devt2xbk78rej" path="res://assets/sprites/shadow.png" id="1_k673f"]
+[ext_resource type="PackedScene" uid="uid://cfhb3r15aguqf" path="res://scenes/components/hurtbox_component.tscn" id="3_1jvru"]
 
 [sub_resource type="Animation" id="Animation_tb304"]
 length = 0.001
@@ -210,23 +211,29 @@ _data = {
 &"move": SubResource("Animation_1jvru")
 }
 
-[node name="unit" type="Node2D"]
+[node name="unit" type="Area2D"]
 script = ExtResource("1_1jvru")
 
 [node name="visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 
 [node name="shadow" type="Sprite2D" parent="visuals"]
+unique_name_in_owner = true
 modulate = Color(0.14044744, 0.14044744, 0.14044744, 1)
 scale = Vector2(0.8, 1)
 texture = ExtResource("1_k673f")
 
 [node name="sprite" type="Sprite2D" parent="visuals"]
+unique_name_in_owner = true
 position = Vector2(0, -61)
 
 [node name="collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ruro2")
 }
+
+[node name="hurtbox_component" parent="." instance=ExtResource("3_1jvru")]

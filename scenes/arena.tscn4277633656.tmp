@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dat1sk3w62m11"]
+
+[ext_resource type="Script" uid="uid://cln88y10c36de" path="res://scenes/arena.gd" id="1_7ft05"]
+[ext_resource type="Texture2D" uid="uid://cy4xfx762bxgb" path="res://assets/sprites/BG.png" id="1_olpmc"]
+[ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://assets/sprites/Map.png" id="2_xdvfk"]
+[ext_resource type="PackedScene" uid="uid://ce8c3yhbj1ktf" path="res://scenes/players/player_well_rounded.tscn" id="3_olpmc"]
+[ext_resource type="Script" uid="uid://v5mstollbh7r" path="res://scenes/arena_camera.gd" id="3_xdvfk"]
+[ext_resource type="PackedScene" uid="uid://dci25q4h28tg3" path="res://scenes/enemies/enemy_chaser_slow.tscn" id="6_4ag8t"]
+
+[node name="arena" type="Node2D"]
+script = ExtResource("1_7ft05")
+
+[node name="black_background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_olpmc")
+
+[node name="grass_background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_xdvfk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_xdvfk")
+
+[node name="player_well_rounded" parent="." instance=ExtResource("3_olpmc")]
+
+[node name="enemy_chaser_slow" parent="." instance=ExtResource("6_4ag8t")]
+position = Vector2(-709, -18)

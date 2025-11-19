@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkrwichc80lc"]
+
+[ext_resource type="PackedScene" uid="uid://dci25q4h28tg3" path="res://scenes/enemies/enemy_chaser_slow.tscn" id="1_cipo7"]
+[ext_resource type="Texture2D" uid="uid://c6vplmpl4q4jr" path="res://assets/sprites/Enemies/Enemy_3.png" id="2_dmr8l"]
+[ext_resource type="Resource" uid="uid://dkyu1tgpllah0" path="res://resources/units/enemies/status_enemy_chaser_fast.tres" id="2_kernq"]
+
+[node name="enemy_chaser_fast" instance=ExtResource("1_cipo7")]
+status = ExtResource("2_kernq")
+
+[node name="visuals" parent="." index="0"]
+unique_name_in_owner = false
+
+[node name="shadow" parent="visuals" index="0"]
+unique_name_in_owner = false
+
+[node name="sprite" parent="visuals" index="1"]
+unique_name_in_owner = false
+texture = ExtResource("2_dmr8l")
+
+[node name="collision" parent="." index="1"]
+unique_name_in_owner = false
