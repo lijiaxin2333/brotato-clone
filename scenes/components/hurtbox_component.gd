@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 	pass
 
 func on_area_entered(area: Area2D) -> void:
-	if area is HurtboxComponent:
+	if area is HitboxComponent:
 		on_damaged.emit(area)
